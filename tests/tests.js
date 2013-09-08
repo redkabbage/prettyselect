@@ -7,7 +7,7 @@ casper.test.begin('There sould be two working prettySelect boxes.', 8, function 
                 return document.querySelectorAll('body').length >= 1;
             });
         }, function then() {    // step to execute when check() is ok
-            this.captureSelector('initial.png', 'body');
+            this.captureSelector('tests/captures/initial.png', 'body');
             this.echo('Initial captured successfully.');
 
             test.assertNotVisible('select', 'Select boxes are hidden');
@@ -22,7 +22,7 @@ casper.test.begin('There sould be two working prettySelect boxes.', 8, function 
     });
 
     casper.then(function () {
-        this.captureSelector('open-drops.png', 'body');
+        this.captureSelector('tests/captures/open-drops.png', 'body');
 
         test.assertVisible('.ps-drop', 'The drop elements are visible after a click');
         this.click('#select-1-ps UL.ps-results li[data-val="value3"]');
@@ -39,7 +39,7 @@ casper.test.begin('There sould be two working prettySelect boxes.', 8, function 
     casper.then(function () {
         test.assertSelectorHasText('#select-2-ps .ps-label', 'Value 6');
         test.assertField('other', 'value6');
-        this.captureSelector('finished.png', 'body');
+        this.captureSelector('tests/captures/finished.png', 'body');
         this.echo("Final screen captured successfully.");
     });
 
