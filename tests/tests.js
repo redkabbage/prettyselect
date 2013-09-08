@@ -1,7 +1,7 @@
 var casper = require('casper').create();
 
 casper.test.begin('There sould be two working prettySelect boxes.', 8, function suite(test) {
-    casper.start("test-min.html", function () {
+    casper.start("tests/test-min.html", function () {
         this.waitFor(function check() {
             return this.evaluate(function() {
                 return document.querySelectorAll('body').length >= 1;

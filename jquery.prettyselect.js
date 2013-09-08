@@ -10,7 +10,7 @@
 			var self = this,
 				settings,
 				init,
-				setListeners
+				setListeners;
 
 			this.defaults = {};
 			this.$el = false;

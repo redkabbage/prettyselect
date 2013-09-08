@@ -1,0 +1,37 @@
+{
+	"name": "prettyselect",
+	"description": "Simple jQuery plugin to convert select elements to something more stylable.",
+	"version": "0.0.1",
+	"homepage": "https://github.com/mattacular/prettyselect",
+	"author": {
+		"name": "Matt Stills",
+		"email": "mattacular@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/mattacular/prettyselect.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mattacular/prettyselect/issues"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/mattacular/prettyselect/blob/master/LICENSE-MIT"
+		}
+	],
+	"main": "grunt.js",
+	"engines": {
+		"node": "*"
+	},
+	"devDependencies": {
+		"grunt-casperjs": "1.0.9",
+		"grunt-contrib-jshint": "~0.2.0",
+		"grunt-contrib-clean": "~0.4.0",
+		"grunt-contrib-internal": "~0.4.3",
+		"grunt": "~0.4.1"
+	},
+	"peerDependencies": {
+		"grunt": "~0.4.1"
+	}
+}
