@@ -2,8 +2,8 @@
  * Pretty Select - Base Styles
  * Author: Matt Stills (https://github.com/mattacular)
  */
-
 .ps-container {
+  min-width: 25px;
   font-size: 13px;
   position: relative;
   display: inline-block;
@@ -80,16 +80,18 @@
   display: block;
   height: 100%;
   width: 18px;
+  border-left: 1px solid #AAA;
 }
+
 .ps-container .ps-inner div b {
-  background: url('chosen-sprite.png') no-repeat 0px 2px;
+  background: url('prettyselect.arrow.png') no-repeat 4px 8px;
   display: block;
   width: 100%;
   height: 100%;
 }
 
 .ps-container .ps-drop {
-  margin-top: -1px;
+  margin-top: 0;
   -webkit-border-radius: 0 0 4px 4px;
   -moz-border-radius   : 0 0 4px 4px;
   border-radius        : 0 0 4px 4px;
@@ -97,10 +99,7 @@
   -webkit-background-clip: padding-box;
   background-clip        : padding-box;
 }
-/* @end */
 
-
-/* @group Results */
 .ps-container .ps-results {
   margin: 0 4px 4px 0;
   max-height: 240px;
@@ -118,20 +117,19 @@
   margin: 0;
   list-style: none;
 }
+
 .ps-container .ps-results .active-result {
   cursor: pointer;
   display: list-item;
 }
 
-/* @end */
-
-/* @group Active  */
 .ps-container-active .ps-inner {
   -webkit-box-shadow: 0 0 5px rgba(0,0,0,.3);
   -moz-box-shadow   : 0 0 5px rgba(0,0,0,.3);
   box-shadow        : 0 0 5px rgba(0,0,0,.3);
   border: 1px solid #5897fb;
 }
+
 .ps-container-active .ps-inner {
   border: 1px solid #aaa;
   -webkit-box-shadow: 0 1px 0 #fff inset;
@@ -151,24 +149,25 @@
   border-bottom-left-radius : 0;
   border-bottom-right-radius: 0;
 }
+
 .ps-container-active .ps-inner div {
   background: transparent;
   border-left: none;
 }
+
 .ps-container-active .ps-inner div b {
   background-position: -18px 2px;
 }
 
-/* @end */
-
-/* @group Disabled Support */
 .ps-disabled {
   cursor: default;
   opacity:0.5 !important;
 }
+
 .ps-disabled .ps-inner {
   cursor: default;
 }
+
 .ps-disabled .ps-choices .search-choice .search-choice-close {
   cursor: default;
 }

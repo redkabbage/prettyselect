@@ -29,7 +29,8 @@
 					'style': 'width: ' + ((settings.width) ? settings.width : 'auto') + ';'
 				});
 
-				$pretty.html('<a class="ps-inner"><span class="ps-label">' + $el.find('option[selected="selected"]').text() + '</span><div><b></b></div></a><div class="ps-drop" style="display: none;"><ul class="ps-results"></ul></div>');
+				$pretty.html('<a class="ps-inner"><span class="ps-label">' + $el.find('option[selected]').text() + '</span><div><b></b></div></a><div class="ps-drop" style="display: none;"><ul class="ps-results"></ul></div>');
+				$pretty.data('original', $el.attr('id'));
 				$el.hide().before($pretty);
 				$prettyResults = $('.ps-results', $pretty);
 
@@ -54,7 +55,7 @@
 								settings.selectCallback($target.data('val'));
 							}
 
-							$($pretty.data('original')).val($target.data('val'));
+							$('#' + $pretty.data('original')).val($target.data('val'));
 							$pretty.find('.ps-label').text($target.text());
 						}
 

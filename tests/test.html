@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../jquery.prettyselect.js"></script>
+	<link href="../jquery.prettyselect.css" media="all" rel="stylesheet" type="text/css">
+	<script>
+		$(document).on('ready', function () {
+			$('select').prettySelect({ width: '100px' });
+		});
+	</script>
+</head>
+<body>
+	<select id="select-1" name="select">
+		<option value="value1">Value 1</option> 
+		<option value="value2" selected>Value 2</option>
+		<option value="value3">Value 3</option>
+	</select>
+
+	<br/><br/>
+
+	<select id="select-2" name="other">
+		<option value="value4">Value 4</option> 
+		<option value="value5">Value 5</option>
+		<option value="value6">Value 6</option>
+	</select>
+<body>
+</html>
