@@ -19,18 +19,33 @@ module.exports = function (grunt) {
 		},
 		// before generating any new files, remove any previously-created files.
 		clean: {
-			tests: ['tmp'],
-			expected: ['test/expected']
+			minified: ['*.min.css', '*.min.js']
+		},
+		uglify: {
+			target: {
+				files: {
+					'jquery.prettyselect.min.js': ['jquery.prettyselect.js']
+				}
+			}
+		},
+		cssmin: {
+			target: { 
+				files: {
+					'jquery.prettyselect.min.css': ['jquery.prettyselect.css']
+				}
+			}
 		},
 		casperjs: {
 			files: ['tests/**/*.js']
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-casperjs');
 
 	// lint and test before declaring a revision stable
-	grunt.registerTask('default', ['jshint', 'casperjs']);
+	grunt.registerTask('default', ['jshint', 'clean', 'uglify', 'cssmin', 'casperjs']);
 };
