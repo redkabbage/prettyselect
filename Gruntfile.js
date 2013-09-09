@@ -35,8 +35,10 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		casperjs: {
-			files: ['tests/**/*.js']
+		exec: {
+			casper: {
+				command: 'casperjs test tests/tests.js'
+			}
 		}
 	});
 
@@ -44,8 +46,8 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-casperjs');
+	grunt.loadNpmTasks('grunt-exec');
 
 	// lint and test before declaring a revision stable
-	grunt.registerTask('default', ['jshint', 'clean', 'uglify', 'cssmin', 'casperjs']);
+	grunt.registerTask('default', ['jshint', 'clean', 'uglify', 'cssmin', 'exec:casper']);
 };
