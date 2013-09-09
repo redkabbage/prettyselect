@@ -24,7 +24,7 @@
 				self.$el = $el;
 				$pretty = $('<div/>', { 
 					'id': $el.attr('id') + '-ps', 
-					'class': 'ps-container ps-active',
+					'class': 'ps-container ps-active' + (settings.wrapperClass ? ' ' + settings.wrapperClass : ''),
 					'data-original': $el.attr('id'),
 					'style': 'width: ' + ((settings.width) ? settings.width : 'auto') + ';'
 				});
