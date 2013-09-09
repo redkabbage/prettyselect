@@ -6,7 +6,10 @@
 	<link href="../jquery.prettyselect.css" media="all" rel="stylesheet" type="text/css">
 	<script>
 		$(document).on('ready', function () {
-			$('select').prettySelect({ width: '100px' });
+			$('select').prettySelect({
+				width: '100px',
+				wrapperClass: 'wrapper'
+			});
 		});
 	</script>
 </head>

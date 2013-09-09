@@ -14,6 +14,8 @@ casper.test.begin('There sould be two working prettySelect boxes.', 8, function 
             test.assertElementCount('.ps-container', 2, 'There are two prettySelect containers');
             test.assertNotVisible('.ps-drop', 'The drop elements are hidden');
 
+            test.assertExists('.ps-container.wrapper', 'Wrapper class setting was applied correctly');
+
             this.click('#select-1-ps');
             this.click('#select-2-ps');
         }, function timeout() { // step to execute if check has failed
