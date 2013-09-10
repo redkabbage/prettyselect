@@ -5,23 +5,19 @@
  */
 ;(function($) {
 	'use strict';
+
 	$.fn.extend( {
 		prettySelect: function (options) {
 			var self = this,
-				settings,
-				init,
-				setListeners;
-
-			this.defaults = {};
-			this.$el = false;
+				defaults = {},
+				settings, convert, setListeners;
 			
-			init = function ($el, settings) {
+			convert = function ($el, settings) {
 				var $attach = $el.parent(),
 					$options = $el.children('option'),
 					$pretty, $prettyResults,
 					attachPos;
 
-				self.$el = $el;
 				$pretty = $('<div/>', { 
 					'id': $el.attr('id') + '-ps', 
 					'class': 'ps-container ps-active' + (settings.wrapperClass ? ' ' + settings.wrapperClass : ''),
@@ -64,12 +60,12 @@
 					});
 			};
 
-			settings = $.extend({}, this.defaults, options);
+			settings = $.extend({}, defaults, options);
 
-			return this.each( function() {
-				init($(this), settings);
+			return this.each( function () {
+				convert($(this), settings);
 				setListeners(settings);
-			});
+			} );
 		}
 	});
 

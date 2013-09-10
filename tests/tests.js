@@ -1,6 +1,6 @@
 var casper = require('casper').create();
 
-casper.test.begin('There sould be two working prettySelect boxes.', 8, function suite(test) {
+casper.test.begin('There should be two working prettySelect boxes.', 9, function suite(test) {
     casper.start("tests/test-min.html", function () {
         this.waitFor(function check() {
             return this.evaluate(function() {
