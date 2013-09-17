@@ -112,10 +112,16 @@
 
 .ps-container .ps-results li {
   display: none;
+  width: 100%;
+  clear: both;
   line-height: 15px;
+  list-style: none;
   padding: 5px 6px;
   margin: 0;
-  list-style: none;
+}
+
+.ps-container .ps-results li:hover {
+  background-color: #EEE;
 }
 
 .ps-container .ps-results .active-result {

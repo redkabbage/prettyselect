@@ -43,16 +43,23 @@
 					.on('click', '.ps-container', function (event) {
 						var $target = $(event.target),
 							$pretty = $(this),
-							$drop = $pretty.find('.ps-drop');
+							$drop = $pretty.find('.ps-drop'),
+							$original = $('#' + $pretty.data('original'));
 
-						// if a result was clicked, update the original element's value
+						// if a result was clicked
 						if ($target.attr('class') === 'active-result') {
+							// update the value on the parent <select/> element
+							$original.val($target.data('val'));
+							$pretty.find('.ps-label').text($target.text());
+
+							// also move the "selected" attribute to the right <option/>
+							$original.find('option[selected]').attr('selected', null);
+							$original.find('option[value=' + $target.data('val') + ']').attr('selected', '');
+
+							// if a select callback was passed via settings, call it here
 							if (typeof settings.selectCallback === 'function') {
 								settings.selectCallback($target.data('val'));
 							}
-
-							$('#' + $pretty.data('original')).val($target.data('val'));
-							$pretty.find('.ps-label').text($target.text());
 						}
 
 						// toggle results drop
@@ -62,10 +69,10 @@
 
 			settings = $.extend({}, defaults, options);
 
-			return this.each( function () {
+			return this.each(function () {
 				convert($(this), settings);
 				setListeners(settings);
-			} );
+			});
 		}
 	});
 
