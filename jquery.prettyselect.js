@@ -11,15 +11,15 @@
 			var self = this,
 				defaults = {},
 				settings, convert, setListeners;
-			
+
 			convert = function ($el, settings) {
 				var $attach = $el.parent(),
 					$options = $el.children('option'),
 					$pretty, $prettyResults,
 					attachPos;
 
-				$pretty = $('<div/>', { 
-					'id': $el.attr('id') + '-ps', 
+				$pretty = $('<div/>', {
+					'id': $el.attr('id') + '-ps',
 					'class': 'ps-container ps-active' + (settings.wrapperClass ? ' ' + settings.wrapperClass : ''),
 					'data-original': $el.attr('id'),
 					'style': 'width: ' + ((settings.width) ? settings.width : 'auto') + ';'
@@ -55,6 +55,7 @@
 							// also move the "selected" attribute to the right <option/>
 							$original.find('option[selected]').attr('selected', null);
 							$original.find('option[value=' + $target.data('val') + ']').attr('selected', '');
+							$original.trigger('change');
 
 							// if a select callback was passed via settings, call it here
 							if (typeof settings.selectCallback === 'function') {
